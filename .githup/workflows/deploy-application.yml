@@ -1,0 +1,18 @@
+name: Deloy Application
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  <create-deloyment-artifacts:
+    name: Create deployment artifaces
+    runs-on: ubuntu-latest
+    steps:
+      - users: actions/checkout@v2
+
+      - name: Compile CSS and Javacript
+        run:
+        npm install
+        npm run prod
+
